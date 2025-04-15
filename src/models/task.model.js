@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema(
   {
-    tarea: {
+    title: {
       type: String,
       required: true,
     },
@@ -17,6 +17,7 @@ const taskSchema = new mongoose.Schema(
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
+      required: true
     },
   },
   {

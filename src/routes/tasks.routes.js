@@ -4,11 +4,11 @@ import {getTask, getTasks, createTask, updateTask, deleteTask} from "../controll
 const router = Router()
 
 //RUTAS PARA EL CRUD 
-router.get('/tasks', authRequired, getTasks )
-router.get('/tasks/:id', authRequired,getTask ) //con un id especifico de tarea
-router.post('/tasks', authRequired, )
-router.delete('/tasks/:id', authRequired, )
-router.put('/tasks/:id', authRequired, )
+router.get('/tasks', authRequired, getTasks );
+router.get('/tasks/:id', authRequired,getTask );//con un id especifico de tarea
+router.post('/tasks', authRequired, createTask);
+router.delete('/tasks/:id', authRequired, deleteTask );
+router.put('/tasks/:id', authRequired, updateTask);
 
 export default router
 

@@ -8,9 +8,15 @@ export const authRequired = (req, res, next)=> {
  
     jwt.verify(token, TOKEN_SECRET, (err, user) => {
         if(err) return res.status(403).json({message: "Token invalido"});
+
         req.user = user //peticion que esta llegando, seria el "bloqueo"
-        console.log(user)
+ 
         next();
     })
+
+
+
+
+
  
 }

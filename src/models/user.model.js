@@ -22,6 +22,6 @@ const UserSchema = new mongoose.Schema({
     timestamps: true
 })
 
-export default mongoose.model ('User', UserSchema) //va a interactuar con la BD
+export default mongoose.model ('user', UserSchema) //va a interactuar con la BD
 // Con este esquema, mongoDB entiende como guardarlo con todo el modelo de la coleccion de User 
 //con este model se podran hacer consultas
