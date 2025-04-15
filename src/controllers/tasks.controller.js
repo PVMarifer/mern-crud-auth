@@ -2,16 +2,12 @@ import { json } from "express";
 import Task from "../models/task.model.js";
 
 export const getTasks = async (req, res) => {
-   const tasks = await Task.find({
-    user: req.user.id
-   }).populate('user')
+   const tasks = await Task.find({})
    res.json(tasks)
 };
 
 export const createTask = async (req, res) => {
     const {title, description, date}= req.body;
-
-    console.log(req.user)
 
     const newTask = new Task({
         title,
@@ -25,7 +21,7 @@ export const createTask = async (req, res) => {
 };
 
 export const getTask = async (req, res) => {
-   const task = await task.findById(req.params.id).populate("user");
+   const task = await Task.findById(req.params.id);
     if(!task) return res.status(400).json({message: 'Tarea no encontrada'})
     res.json(task);
 }
@@ -33,7 +29,7 @@ export const getTask = async (req, res) => {
 
 export const deleteTask = async (req, res) => {
     const task = await Task.findByIdAndDelete(req.params.id)
-    if (!task) return res.status(404),json({message: 'Tarea no encontrada'});
+    if (!task) return res.status(404).json({message: 'Tarea no encontrada'});
     res.json(task)
 };
 

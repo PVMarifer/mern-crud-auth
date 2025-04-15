@@ -1,5 +1,5 @@
-import {z} from 'zod'
-import { register } from '../controllers/auth.controller';
+import {z} from 'zod';
+import { register } from '../controllers/auth.controller.js';
 
 export const registerSchema = z.object ({
 username: z.string({
@@ -19,6 +19,7 @@ password: z.string({
 });
 
 export const loginSchema = z.object ({
+   
     email: z.string({
         required_error: "El email es requerrido", 
     }).email({

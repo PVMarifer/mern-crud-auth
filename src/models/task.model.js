@@ -14,11 +14,6 @@ const taskSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
-    user: {
-      type: mongoose.Types.ObjectId,
-      ref: "User",
-      required: true
-    },
   },
   {
     timestamps: true,
