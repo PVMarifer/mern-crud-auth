@@ -3,6 +3,9 @@
         {
             "name": "Preset Connection",
             "connectionString": "mongodb://localhost:27017"
-        }
+        },
+        {
+            "css.validate": false
+}
     ]
 }
