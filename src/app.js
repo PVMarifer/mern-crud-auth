@@ -11,6 +11,8 @@ import paymentRoutes from "./routes/payment.routes.js";
 import cuponRoutes from "./routes/cupon.routes.js";
 import eventRoutes from "./routes/event.routes.js";
 import reviewRoutes from "./routes/review.routes.js";
+import reservationRoutes from "./routes/reservation.routes.js";
+
 
 const app = express ();
 
@@ -26,6 +28,9 @@ app.use("/api", paymentRoutes);
 app.use("/api", cuponRoutes);
 app.use("/api", eventRoutes);
 app.use("/api", reviewRoutes);
+app.use("/api", reservationRoutes);
+
+
 
 export default app;
 
