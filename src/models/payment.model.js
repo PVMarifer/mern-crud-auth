@@ -1,6 +1,6 @@
 import mongoose, { mongo } from "mongoose";
 
-const paymentSchema = new mongoose.schema ({
+const paymentSchema = new mongoose.Schema ({
     paymentM: {
         type: String, 
         required: true,

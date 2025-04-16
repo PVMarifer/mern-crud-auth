@@ -16,11 +16,11 @@ export const createPayment = async (req, res) => {
         const savedPayment = await newPayment.save()
         res.json(savedPayment);
 };
-export const getPayment = async (req, res) => {};
+export const getPayment = async (req, res) => {
 const payment = await payment.findById(req.params.id)
 if (!payment) return res.status(404).json({message: 'Pago no encontrado'})
 res.json(payment)
-
+};
 export const deletePayment = async (req, res) => {
     const payment = await payment.findByIdAndDelete(req.params.id)
     if (!payment) return res.status(404).json({message: 'Pago no encontrado'})
